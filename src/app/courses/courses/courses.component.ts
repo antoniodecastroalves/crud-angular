@@ -11,7 +11,7 @@ export class CoursesComponent implements OnInit {
   courses: Course[] = [
     { _id: '1', name: 'Angular', category: 'front-end' }
   ];
-  displayedColumns = ['name', 'catergory'];
+  displayedColumns = ['name', 'category'];
 
   constructor() { }
 
