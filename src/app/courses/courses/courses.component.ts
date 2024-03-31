@@ -23,7 +23,7 @@ export class CoursesComponent implements OnInit {
     this.courses$ = this.coursesService.list()
     .pipe(
       catchError(error => {
-        console.log(error);
+        this.onError('Error loading courses');
         return of([])
       })
     );
@@ -31,9 +31,7 @@ export class CoursesComponent implements OnInit {
 
   onError(errorMsg: string) {
     this.dialog.open(ErrorDialogComponent, {
-      data: {
-        animal: 'panda',
-      },
+      data: errorMsg,
     });
   }
 
